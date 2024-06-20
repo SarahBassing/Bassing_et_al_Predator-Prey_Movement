@@ -1,9 +1,11 @@
-  #'  ============================================
+  #'  ======================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  Movement Data Preparation 
   #'  Washington Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  ============================================
+  #'  ======================================================
   #'  Script to format cleaned GPS relocation data for subsequent HMM analyses 
   #'  for deer, elk, cougars, and wolves in eastern Washington using data collected 
   #'  in summer (2018 - 2020) and winter (2018-2019 - 2020/2021). Data were 
@@ -18,7 +20,10 @@
   #'  that was created by J. Merkle at the University of Wyoming. It is not provided 
   #'  here but resembles the CalcBurst.R script provided on the Merkle Lab GitHub: 
   #'  https://github.com/jmerkle1/MerkleLab-Code-Repository/blob/main/MoveTools/R/CalcBurst.R 
-  #'  ============================================
+  #'  
+  #'  Data available on Dryad repository associated with this publication.
+  #'  DOI: 10.5061/dryad.kh1893292
+  #'  ======================================================
   
   #'  Clear memory
   rm(list=ls())

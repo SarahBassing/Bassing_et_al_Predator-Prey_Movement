@@ -1,9 +1,11 @@
-  #'  ================================
+  #'  ======================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  K-fold Cross-Validation for RSFs
   #'  WA Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  ================================
+  #'  ======================================================
   #'  Script to run K-fold cross-validation for RSFs following methods described 
   #'  in Boyce et al. (2002). Script pulls in used/available locations and matched 
   #'  covariates (prepared in the DataPrep_for_RSFs.R script), then runs data 
@@ -23,7 +25,8 @@
   #'    5) Spearman's rank correlation between bin rank and frequency of test pts
   #'
   #'  Data available on Dryad repository associated with this publication.
-  #'  ================================
+  #'  DOI: 10.5061/dryad.kh1893292
+  #'  ======================================================
 
   #'  Clear memory
   rm(list=ls())

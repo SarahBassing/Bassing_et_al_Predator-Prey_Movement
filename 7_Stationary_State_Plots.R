@@ -1,12 +1,14 @@
-  #'  ============================================
+  #'  ======================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  Plotting Plot Stationary-State Probabilities
   #'  Washington Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  ============================================
+  #'  ======================================================
   #'  Predict and plot stationary-state probabilities across range of covariate 
-  #'  values.
-  #'  ============================================  
+  #'  values. Create figures for publication.
+  #'  ======================================================
 
   #'  Load libraries
   library(momentuHMM)

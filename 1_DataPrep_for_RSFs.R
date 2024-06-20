@@ -1,9 +1,11 @@
-  #'  =======================================================
+  #'  =====================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  Data Prep for Resource Selection Functions (RSFs)
   #'  Washington Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  =======================================================
+  #'  =====================================================
   #'  Script to randomly sample "available" points from the home range of each 
   #'  collared individual and extract covariate data at each "used" and "available"
   #'  animal location. Final output to be used as input data for RSFs.  
@@ -12,7 +14,7 @@
   #'  will not run with data provided on Dryad (animal relocation data are sensitive; 
   #'  contact Director of the Science Division with the Washington Dept. of Fish 
   #'  and Wildlife for raw data). 
-  #'  ========================================================
+  #'  ======================================================
   
   #'  Clear memory
   rm(list = ls())  
@@ -306,8 +308,7 @@
       )
     #'  Make location and animal ID information non-spatial
     #'  Be sure to remove geometry if this is an sf object
-    animal <- as.data.frame(locs) #%>%
-      #dplyr::select(-geometry)
+    animal <- as.data.frame(locs) 
     #'  Merge animal/time information with covariates
     covs <- as.data.frame(cbind(animal, join_covs))
 

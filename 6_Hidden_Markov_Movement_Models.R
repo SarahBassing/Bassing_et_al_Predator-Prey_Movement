@@ -1,9 +1,11 @@
-  #'  ===================================
+  #'  ======================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  Hidden Markov Movement Models 
   #'  Washington Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  ===================================
+  #'  ======================================================
   #'  Script to run hidden Markov movement models for deer, elk, cougars, & wolves
   #'  for summer & winter, July 2018 - March 2021 in northeastern Washington. 
   #'  Data were collected & generously provided by WPPP collaborators including
@@ -13,10 +15,11 @@
   #'  NOTE: First section of script (lines 18 - 131) provided for transparency and 
   #'  reproducibility but it will not run with data provided on Dryad (animal 
   #'  relocation data are sensitive; contact Director of the Science Division 
-  #'  with the Washington Dept. of Fish and Wildlife for raw data). Data
-  #'  available on Dryad repository associated with this publication can be
+  #'  with the Washington Dept. of Fish and Wildlife at (360) 902-2515 for raw data). 
+  #'  Data available on Dryad repository associated with this publication can be
   #'  loaded so script will run starting at line 133.
-  #'  ============================================
+  #'  DOI: 10.5061/dryad.kh1893292
+  #'  ======================================================
   
   #'  Clear memory
   rm(list=ls())

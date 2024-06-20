@@ -1,9 +1,11 @@
-  #'  ============================================
+  #'  ======================================================
+  #'  Code from Bassing et al. "Predator-prey space-use and 
+  #'  landscape features influence animal movement behaviors 
+  #'  in a large-mammal community". Ecology.
+  #'  
   #'  3rd Order Resource Selection Functions (RSFs)
   #'  Washington Predator-Prey Project
-  #'  Sarah B. Bassing
-  #'  July 2023
-  #'  ============================================
+  #'  ======================================================
   #'  Script to run 3rd order resource selection functions (RSFs) and predict
   #'  relative probability of selection across study areas for each species and
   #'  season. These predictive surfaces are used to represent probability of
@@ -11,7 +13,8 @@
   #'  Summary tables, statistics, and figures created at end of script.
   #'  
   #'  Data available on Dryad repository associated with this publication.
-  #'  ============================================
+  #'  DOI: 10.5061/dryad.kh1893292
+  #'  ======================================================
   
   #'  Clear memory
   rm(list=ls())
