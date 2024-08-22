@@ -5,40 +5,72 @@ This repository archives the code used for analyses described in the manuscript.
 
 Shorthand used throughout scripts and data:
 -------------------------------------------
-Species codes:
--coug, COUG = Cougar
--elk, ELK = Elk
--md, MD = Mule deer
--wtd, WTD = White-tailed deer
--wolf, WOLF = Wolf
+**Species codes:**
 
-Study area codes:
--NE = Northeast
--OK = Okanogan
+_coug, COUG = Cougar_
 
-Season codes:
--Summer18 = summer 2018
--Winter1819 = winter 2018-2019
--Summer19 = summer 2019
--Winter1920 = winter 2019-2020
--Summer20 = summer 2020
--Winter2021 = winter 2020-2021
+_elk, ELK = Elk_
 
-Year codes:
--Year1 = 2018-2019
--Year2 = 2019-2020
--Year3 = 2020-2021
+_md, MD = Mule deer_
 
-Covariate codes:
--Elev: Elevation (m) of observation location
--Slope: Slope (degrees) of terrain at observation location
--RoadDen: Total road length/1 km-sq at observation location
--Dist2Water: Distance (m) to nearest water
--HumanMod: Percentage of human modification to the landscape
--CanopyCover: Percentage of tree cover
--Dist2Edge: Distance (m) to nearest forested to non-forested habitat edge
--PercForestMix: Percentage of forested habitat within 250 m of observation location
--PercXGrass: Percentage of xeric grassland habitat within 250 m of observation location
--PercXShrub: Percentage of xeric shrubland habitat within 250 m of observation location
--Landcover: Numerical value representing landcover classification from Cascadia Partner Forum TerrAdapt:Cascadia tool (30m resolution)
--Landcover_type: Landcover classification label
+_wtd, WTD = White-tailed deer_
+
+_wolf, WOLF = Wolf_
+
+
+**Study area codes:**
+
+_NE = Northeast_
+
+_OK = Okanogan_
+
+
+**Season codes:**
+
+_Summer18 = summer 2018_
+
+_Winter1819 = winter 2018-2019_
+
+_Summer19 = summer 2019_
+
+_Winter1920 = winter 2019-2020_
+
+_Summer20 = summer 2020_
+
+_Winter2021 = winter 2020-2021_
+
+
+**Year codes:**
+
+_Year1 = 2018-2019_
+
+_Year2 = 2019-2020_
+
+_Year3 = 2020-2021_
+
+
+**Covariate codes:**
+
+_Elev: Elevation (m) of observation location_
+
+_Slope: Slope (degrees) of terrain at observation location_
+
+_RoadDen: Total road length/1 km-sq at observation location_
+
+_Dist2Water: Distance (m) to nearest water_
+
+_HumanMod: Percentage of human modification to the landscape_
+
+_CanopyCover: Percentage of tree cover_
+
+_Dist2Edge: Distance (m) to nearest forested to non-forested habitat edge_
+
+_PercForestMix: Percentage of forested habitat within 250 m of observation location_
+
+_PercXGrass: Percentage of xeric grassland habitat within 250 m of observation location_
+
+_PercXShrub: Percentage of xeric shrubland habitat within 250 m of observation location_
+
+_Landcover: Numerical value representing landcover classification from Cascadia Partner Forum TerrAdapt:Cascadia tool (30m resolution)_
+
+_Landcover_type: Landcover classification label_
