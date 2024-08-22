@@ -1,7 +1,7 @@
   #'  ======================================================
-  #'  Code from Bassing et al. "Predator-prey space-use and 
-  #'  landscape features influence animal movement behaviors 
-  #'  in a large-mammal community". Ecology.
+  #'  Code from Bassing et al. 2024 "Predator-prey space-use  
+  #'  and landscape features influence animal movement  
+  #'  behaviors in a large-mammal community". Ecology.
   #'  
   #'  Hidden Markov Movement Models 
   #'  Washington Predator-Prey Project
@@ -76,11 +76,6 @@
   cougData_wtr_OK <- spp_dataPrep_OK(crwOut_ALL[[8]], spp_telem_covs[[8]])
   wolfData_smr_OK <- spp_dataPrep_OK(crwOut_ALL[[11]], spp_telem_covs[[11]])
   wolfData_wtr_OK <- spp_dataPrep_OK(crwOut_ALL[[12]], spp_telem_covs[[12]])
-  bobData_smr_OK <- spp_dataPrep_OK(crwOut_ALL[[15]], spp_telem_covs[[15]])
-  bobData_wtr_OK <- spp_dataPrep_OK(crwOut_ALL[[16]], spp_telem_covs[[16]])
-  coyData_smr_OK <- spp_dataPrep_OK(crwOut_ALL[[19]], spp_telem_covs[[19]])
-  coyData_wtr_OK <- spp_dataPrep_OK(crwOut_ALL[[20]], spp_telem_covs[[20]])
-
   
   #'  NORTHEAST data sets
   spp_dataPrep_NE <- function(crwOut, telem_covs){
@@ -122,10 +117,6 @@
   cougData_wtr_NE <- spp_dataPrep_NE(crwOut_ALL[[10]], spp_telem_covs[[10]])
   wolfData_smr_NE <- spp_dataPrep_NE(crwOut_ALL[[13]], spp_telem_covs[[13]])
   wolfData_wtr_NE <- spp_dataPrep_NE(crwOut_ALL[[14]], spp_telem_covs[[14]])
-  bobData_smr_NE <- spp_dataPrep_NE(crwOut_ALL[[17]], spp_telem_covs[[17]])
-  bobData_wtr_NE <- spp_dataPrep_NE(crwOut_ALL[[18]], spp_telem_covs[[18]])
-  coyData_smr_NE <- spp_dataPrep_NE(crwOut_ALL[[21]], spp_telem_covs[[21]])
-  coyData_wtr_NE <- spp_dataPrep_NE(crwOut_ALL[[22]], spp_telem_covs[[22]])
   
   #'  Save data prepped for HMMs
   hmm_data <- list(mdData_smr, mdData_wtr, elkData_smr, elkData_wtr, wtdData_smr, 
@@ -145,7 +136,7 @@
   cov_correlation_OK <- function(dat) {
     covs <- dat %>%
       dplyr::select(c("Dist2Road", "PercOpen", "TRI", "MD_RSF", "COUG_RSF", #"NDVI", 
-                      "WOLF_RSF"))#, "BOB_RSF", "COY_RSF")) 
+                      "WOLF_RSF")) 
     cor_matrix <- cor(covs, use = "complete.obs")
     return(cor_matrix)
   }
@@ -206,14 +197,6 @@
   acf(wolfData_wtr_OK$step[!is.na(wolfData_wtr_OK$step)],lag.max=100)
   acf(wolfData_smr_NE$step[!is.na(wolfData_smr_NE$step)],lag.max=100)
   acf(wolfData_wtr_NE$step[!is.na(wolfData_wtr_NE$step)],lag.max=100)
-  acf(bobData_smr_OK$step[!is.na(bobData_smr_OK$step)],lag.max=100)
-  acf(bobData_wtr_OK$step[!is.na(bobData_wtr_OK$step)],lag.max=100)
-  acf(bobData_smr_NE$step[!is.na(bobData_smr_NE$step)],lag.max=100)
-  acf(bobData_wtr_NE$step[!is.na(bobData_wtr_NE$step)],lag.max=100)
-  acf(coyData_smr_OK$step[!is.na(coyData_smr_OK$step)],lag.max=100)
-  acf(coyData_wtr_OK$step[!is.na(coyData_wtr_OK$step)],lag.max=100)
-  acf(coyData_smr_NE$step[!is.na(coyData_smr_NE$step)],lag.max=100)
-  acf(coyData_wtr_NE$step[!is.na(coyData_wtr_NE$step)],lag.max=100)
  
   #'  What's up with the ACF? Plot step lengths against hour to look for patterns
   mdData_smr <- hmm_data[[1]] 
@@ -251,9 +234,6 @@
   Par0_m1_wtd <- list(step = c(100, 260, 100, 260, 0.01, 0.005), angle = c(0.1, 0.5))  
   Par0_m1_coug <- list(step = c(100, 650, 100, 650, 0.01, 0.005), angle = c(0.1, 0.5))  
   Par0_m1_wolf <- list(step = c(100, 1600, 100, 1600), angle = c(0.1, 0.5))  
-  Par0_m1_bob <- list(step = c(100, 470, 100, 580), angle = c(0.1, 0.5))  
-  Par0_m1_bob_zmass <- list(step = c(100, 470, 100, 580, 0.01, 0.005), angle = c(0.1, 0.5))
-  Par0_m1_coy <- list(step = c(100, 850, 100, 850), angle = c(0.1, 0.5))  
   #'  Step arguments: report 2 means then the 2 SD for the two different states
   #'  Gamma distribution: mean & standard deviation of step lengths for each state
   #'  Michelot & Langrock 2019 recommend using same value for mean and SD per state
@@ -292,10 +272,6 @@
   #'  For prey species
   trans_formula_smr_all <- ~TRI + PercOpen + Dist2Road + COUG_RSF + WOLF_RSF 
   trans_formula_wtr_all <- ~TRI + PercOpen + Dist2Road + SnowCover + COUG_RSF + WOLF_RSF  
-  trans_formula_smr_all_noCoy <- ~TRI + PercOpen + Dist2Road + COUG_RSF + WOLF_RSF  
-  trans_formula_smr_all_noTRI <- ~PercOpen + Dist2Road + COUG_RSF + WOLF_RSF 
-  trans_formula_smr_all_noBob <- ~TRI + PercOpen + Dist2Road + COUG_RSF + WOLF_RSF 
-  trans_formula_wtr_all_noBob <- ~TRI + PercOpen + Dist2Road + SnowCover + COUG_RSF + WOLF_RSF 
   #'  For predator species
   trans_formula_smr_OK <- ~TRI + PercOpen + Dist2Road + MD_RSF 
   trans_formula_wtr_OK <- ~TRI + PercOpen + Dist2Road + SnowCover + MD_RSF 
@@ -493,7 +469,6 @@
   print(spp_HMM_output[[12]]) # wolf_HMM_wtr_OK
   print(spp_HMM_output[[13]]) # wolf_HMM_smr_NE
   print(spp_HMM_output[[14]]) # wolf_HMM_wtr_NE
-  print(spp_HMM_output[[15]]) # bob_HMM_smr_OK
   
 
   ####  State-Dependent Distributions  ####
@@ -721,9 +696,7 @@
       Parameter = ifelse(Parameter == "Dist2Road", "Nearest Road", Parameter),
       Parameter = ifelse(Parameter == "SnowCover1", "Snow Cover (Y)", Parameter),
       Parameter = ifelse(Parameter == "COUG_RSF", "Pr(Cougar)", Parameter),
-      Parameter = ifelse(Parameter == "WOLF_RSF", "Pr(Wolf)", Parameter),
-      Parameter = ifelse(Parameter == "BOB_RSF", "Pr(Bobcat)", Parameter),
-      Parameter = ifelse(Parameter == "COY_RSF", "Pr(Coyote)", Parameter)
+      Parameter = ifelse(Parameter == "WOLF_RSF", "Pr(Wolf)", Parameter)
     ) 
   colnames(results_hmm_TransPr_prey) <- c("Species", "Season", "Study Area", 
                                           "Transition", "Parameter", "Estimate", 

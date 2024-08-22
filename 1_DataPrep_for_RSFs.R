@@ -1,7 +1,7 @@
   #'  =====================================================
-  #'  Code from Bassing et al. "Predator-prey space-use and 
-  #'  landscape features influence animal movement behaviors 
-  #'  in a large-mammal community". Ecology.
+  #'  Code from Bassing et al. 2024 "Predator-prey space-use  
+  #'  and landscape features influence animal movement  
+  #'  behaviors in a large-mammal community". Ecology.
   #'  
   #'  Data Prep for Resource Selection Functions (RSFs)
   #'  Washington Predator-Prey Project
@@ -526,8 +526,6 @@
   wtd_avail_dat <- combo_data(wtd_available, wtd_avail_covs)
   coug_avail_dat <- combo_data(coug_available, coug_avail_covs)
   wolf_avail_dat <- combo_data(wolf_available, wolf_avail_covs)
-  bob_avail_dat <- combo_data(bob_available, bob_avail_covs)
-  coy_avail_dat <- combo_data(coy_available, coy_avail_covs)
   
   #'  Function to drop unneeded columns from list of used data sets
   select_cols <- function(dat) {
@@ -568,9 +566,7 @@
   save(wtd_dat_all, file = "./Outputs/RSF_pts/wtd_dat_all_for_pub.RData")
   save(coug_dat_all, file = "./Outputs/RSF_pts/coug_dat_all_for_pub.RData")
   save(wolf_dat_all, file = "./Outputs/RSF_pts/wolf_dat_all_for_pub.RData")
-  save(bob_dat_all, file = "./Outputs/RSF_pts/bob_dat_all_for_pub.RData")
-  save(coy_dat_all, file = "./Outputs/RSF_pts/coy_dat_all_for_pub.RData")
-
+  
   
   #'  Next step: Run RSFs with Resource_Selection_Function_Model.R
   

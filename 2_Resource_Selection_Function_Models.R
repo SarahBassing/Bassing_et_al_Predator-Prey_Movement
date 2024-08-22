@@ -1,7 +1,7 @@
   #'  ======================================================
-  #'  Code from Bassing et al. "Predator-prey space-use and 
-  #'  landscape features influence animal movement behaviors 
-  #'  in a large-mammal community". Ecology.
+  #'  Code from Bassing et al. 2024 "Predator-prey space-use  
+  #'  and landscape features influence animal movement  
+  #'  behaviors in a large-mammal community". Ecology.
   #'  
   #'  3rd Order Resource Selection Functions (RSFs)
   #'  Washington Predator-Prey Project
@@ -770,7 +770,7 @@
     separate("Landcover_typeOther", c("Landcover_typeOther (SE)", "Landcover_typeOther Pval"), sep = "_") %>%
     separate("Landcover_typeShrub Mix", c("Landcover_typeShrub Mix (SE)", "Landcover_typeShrub Mix Pval"), sep = "_") %>%
     separate("Landcover_typeWetland", c("Landcover_typeWetland (SE)", "Landcover_typeWetland Pval"), sep = "_") %>%
-    arrange(match(Species, c("Mule Deer", "Elk", "White-tailed Deer", "Cougar", "Wolf", "Bobcat", "Coyote"))) %>%
+    arrange(match(Species, c("Mule Deer", "Elk", "White-tailed Deer", "Cougar", "Wolf"))) %>%
     arrange(match(Season, c("Summer", "Winter")))
   
   #'  Quick summary stats for publication
@@ -798,12 +798,9 @@
   wtd_n_locs <- n_locs(wtd_dat_all, spp = "White-tailed Deer")
   coug_n_locs <- n_locs(coug_dat_all, spp = "Cougar")
   wolf_n_locs <- n_locs(wolf_dat_all, spp = "Wolf")
-  bob_n_locs <- n_locs(bob_dat_all, spp = "Bobcat")
-  coy_n_locs <- n_locs(coy_dat_all, spp = "Coyote")
   
   #'  Make summary table of data that went into RSFs
-  collar_table <- rbind(bob_n_locs, coug_n_locs, coy_n_locs, elk_n_locs, md_n_locs, 
-                        wtd_n_locs, wolf_n_locs)
+  collar_table <- rbind(coug_n_locs, elk_n_locs, md_n_locs, wtd_n_locs, wolf_n_locs)
   colnames(collar_table) <- c("Species", "Season", "Individuals (n)", "Used locations (n)")
   
   #'  How many UNIQUE individuals were collared total?
@@ -812,9 +809,7 @@
   wtd_all <- length(unique(wtd_dat_all$ID))
   coug_all <- length(unique(coug_dat_all$ID))
   wolf_all <- length(unique(wolf_dat_all$ID))
-  bob_all <- length(unique(bob_dat_all$ID))
-  coy_all <- length(unique(coy_dat_all$ID))
-  (unique_ind <- sum(md_all, elk_all, wtd_all, coug_all, wolf_all, bob_all, coy_all))
+  (unique_ind <- sum(md_all, elk_all, wtd_all, coug_all, wolf_all))
   
   #'  Average number of locations per season
   (mu_smr <- mean(collar_table$`Used locations (n)`[collar_table$Season == "Summer"]))

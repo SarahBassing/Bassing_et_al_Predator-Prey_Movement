@@ -1,7 +1,7 @@
   #'  ======================================================
-  #'  Code from Bassing et al. "Predator-prey space-use and 
-  #'  landscape features influence animal movement behaviors 
-  #'  in a large-mammal community". Ecology.
+  #'  Code from Bassing et al. 2024 "Predator-prey space-use  
+  #'  and landscape features influence animal movement  
+  #'  behaviors in a large-mammal community". Ecology.
   #'  
   #'  Covariate extraction for movement analysis
   #'  Washington Predator-Prey Project
